@@ -1,20 +1,20 @@
 import random
+
 print('***************** WORD GUESSING GAME ***************** ')
 name = input("What is your name? ")
-print("Good Luck ! ",name)
-
+print("Good Luck ! ", name)
+print()
 repeat = True
-while repeat == True :
-    animals = ['cat','dog','fish','pig','birds','cow','chicken','goat','duck',
-               'horse','rabbit','butterfly','frog','rat','snake']
+while repeat == True:
+    animals = ['cat', 'dog', 'fish', 'pig', 'birds', 'cow', 'chicken', 'goat', 'duck',
+               'horse', 'rabbit', 'butterfly', 'frog', 'rat', 'snake']
 
     words = animals
     word = random.choice(words)
 
-    print("Your word has",len(word), "letters.")
+    print("Your word has", len(word), "letters.")
 
     if word in animals:
-        print("Guess the Animal")
         print("Guess the Animal found in the community: ")
 
     guesses = ''
@@ -25,6 +25,7 @@ while repeat == True :
         for i in word:
             if i in guesses:
                 print(i)
+
             else:
                 print("_")
                 failed += 1
@@ -34,7 +35,7 @@ while repeat == True :
             print("The word is: ", word)
             break
 
-        guess = input("guess a character:")
+        guess = input("guess the animal: ")
         guesses += guess
 
         if guess not in word:
@@ -42,5 +43,13 @@ while repeat == True :
             print("Wrong")
             print("You have", + life, 'more life')
 
-            if life == 0:
-                exit("Thank you for playing")
+        if life == 0:
+            exit("Thank you for playing")
+
+    play = input('play again? ')
+    if play == 'yes':
+        print(play)
+
+    elif play == "no":
+        print(play)
+        exit('Thank you for playing')
